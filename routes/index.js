@@ -15,10 +15,10 @@ const connection = new pg.Pool({
       `select * from tasks;`,
       (error, results) => {
         console.log(error);
-        console.log(results);
+        console.log(results.rows);
         res.render('index', {
           title: 'ToDo App',
-          todos: results,
+          todos: results.rows,
         });
       }
     );
