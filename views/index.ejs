@@ -5,6 +5,7 @@
   <link rel='stylesheet' href='/stylesheets/style.css'/>
 </head>
 <body>
+  <%- include('./error_messages'); %>
 <% if(isAuth) { %>
   <form action="/" method="post">
     <label>タスクの追加</label>
@@ -13,7 +14,7 @@
   </form>
   <ul>
     <% for(let todo of todos){ %>
-      <li><span><%= todo.content %></span></li>
+      <li><input type="checkbox"><span><%= todo.content %></span></li>
     <% } %>
   </ul>
   <a href="/logout">Click to LOGOUT</a>
